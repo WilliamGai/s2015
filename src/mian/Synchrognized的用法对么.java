@@ -10,6 +10,12 @@ public class Synchrognized的用法对么 {
         public int clicks;
     }
     public void read(Article article){
+        synchronized (article.id){
+            article.clicks ++;
+            save(article);
+        }
+    }
+    public void read2(Article article){
         synchronized (article.id.intern()){
             article.clicks ++;
             save(article);
@@ -17,5 +23,15 @@ public class Synchrognized的用法对么 {
     }
     public void save(Article article){
 
+    }
+
+    /**
+     * 下面的这段代码negative锁住不
+     */
+    private String lock ="a";
+    public void testLock(){
+        synchronized (lock){
+            //....
+        }
     }
 }

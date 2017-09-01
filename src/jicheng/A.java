@@ -1,4 +1,4 @@
-package jicehng;
+package jicheng;
 
 public abstract class A {
 	public void say(){

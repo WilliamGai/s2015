@@ -1,4 +1,4 @@
-package jicehng;
+package jicheng;
 
 import java.util.Arrays;
 

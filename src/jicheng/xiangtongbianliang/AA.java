@@ -1,4 +1,4 @@
-package jicehng.xiangtongbianliang;
+package jicheng.xiangtongbianliang;
 
 public class AA {
 	public String a = "AA.a";
