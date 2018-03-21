@@ -15,7 +15,7 @@ public class ArrayListProxyTest {
         System.out.println("-----创建实例----");
         ArrayList list = new ArrayList();
         Object proxy = Proxy.newProxyInstance(
-                List.class.getClassLoader(),
+                ArrayList.class.getClassLoader(),
                 new Class[]{ List.class},
                 new MyInvocationHandler2(list)
         );

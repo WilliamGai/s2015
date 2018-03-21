@@ -1,4 +1,8 @@
-package proxy;
+package proxy.jdk;
+
+import proxy.jdk.ProxyFactory;
+import proxy.jdk.Student;
+import proxy.jdk.StudentInterface;
 
 public class Test {
 

@@ -55,9 +55,9 @@ public enum GenderType {
 	}
     public static void main(String[] args) throws InterruptedException
 	{
-    	GenderType t = GenderType.valueOf("MALE");//可以得到
+    	GenderType t = GenderType.valueOf("MALE");//鍙互寰楀埌
     	System.out.println(t);
-    	GenderType t2 = GenderType.fromString("FEMALE--");//可以得到
+    	GenderType t2 = GenderType.fromString("FEMALE--");//鍙互寰楀埌
     	System.out.println(t2);
 	}
 	

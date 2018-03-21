@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Test3 {
     public static void main(String args[]){
-
+        ClassLoader c;
     }
 
 

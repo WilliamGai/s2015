@@ -50,13 +50,13 @@ public enum GenderType {
 		String desc = null;
         switch (this) {
 		case MALE: 
-			desc = "ÄÐÐÔ"; 
+			desc = "ç”·æ€§"; 
 			break; 
 		case FEMALE:   
-			desc = "Å®ÐÔ";   
+			desc = "å¥³æ€§";   
 			break; 
 		default:    
-			desc = "Î´ÖªÓÃ»§"; 
+			desc = "æœªçŸ¥ç”¨æˆ·"; 
 			break; 
 		}
         return desc;

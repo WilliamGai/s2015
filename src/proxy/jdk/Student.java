@@ -1,6 +1,6 @@
-package proxy;
+package proxy.jdk;
 
-public class Student implements StudentInterface{
+public class Student implements StudentInterface {
 	private String name;
 	private int age;
 	private String gender;

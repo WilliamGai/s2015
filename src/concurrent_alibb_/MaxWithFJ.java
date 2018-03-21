@@ -13,8 +13,6 @@ public class MaxWithFJ extends RecursiveAction{
 
 	public static void main(String[] args) {
 		AtomicInteger a_int = new AtomicInteger();
-
-
 	}
 
 	@Override

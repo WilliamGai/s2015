@@ -1,0 +1,11 @@
+## 总的配置
+/RemoteSystemsTempFiles/
+/.recommenders/
+/.metadata/
+*/target/
+/log/
+*/upload/*
+/*log/
+*.log
+*.class
+*.log.*

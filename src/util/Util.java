@@ -3,6 +3,7 @@ package util;
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -18,6 +19,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baidu.bjf.remoting.protobuf.Codec;
 import com.baidu.bjf.remoting.protobuf.ProtobufProxy;
 import com.google.common.collect.Lists;
@@ -1066,4 +1068,62 @@ public class Util {
         }
         return srcSize == all.size();
     }
+
+	/**
+	 * 格式化字符串 ,按照logback的方式,{}中没有数字 tips,可以映射的函数:BiFunction
+	 */
+	public static String format(String messagePattern, Object... arguments) {
+		if ((messagePattern == null) || (arguments == null) || (arguments.length == 0)) {
+			return messagePattern;
+		}
+
+		StringBuilder result = new StringBuilder();
+		int escapeCounter = 0;
+		int currentArgument = 0;
+		for (int i = 0; i < messagePattern.length(); i++) {
+			char curChar = messagePattern.charAt(i);
+			if (curChar == '\\') {
+				escapeCounter++;
+			} else if ((curChar == '{') && (i < messagePattern.length() - 1)
+					&& (messagePattern.charAt(i + 1) == '}')) {
+				int escapedEscapes = escapeCounter / 2;
+				for (int j = 0; j < escapedEscapes; j++) {
+					result.append('\\');
+				}
+
+				if (escapeCounter % 2 == 1) {
+					result.append('{');
+					result.append('}');
+				} else {
+					if (currentArgument < arguments.length)
+						result.append(arguments[currentArgument]);
+					else {
+						result.append('{').append('}');
+					}
+					currentArgument++;
+				}
+				i++;
+				escapeCounter = 0;
+			} else {
+				if (escapeCounter > 0) {
+					for (int j = 0; j < escapeCounter; j++) {
+						result.append('\\');
+					}
+					escapeCounter = 0;
+				}
+				result.append(curChar);
+			}
+		}
+		return result.toString();
+	}
+
+	public static String prettyJsonStr(Object obj) {
+		return JSON.toJSONString(obj, SerializerFeature.PrettyFormat, SerializerFeature.WriteClassName,
+				SerializerFeature.WriteMapNullValue, SerializerFeature.WriteDateUseDateFormat);
+	}
+	public static String getM(long availmem) {
+		double result = availmem / 1024f / 1024f;
+		DecimalFormat df = new DecimalFormat("#.##");
+		return df.format(result) + " MB";
+	}
 }

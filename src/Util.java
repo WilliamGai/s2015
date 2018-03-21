@@ -112,7 +112,7 @@ public class Util {
 		return result.toString();
 	}
 
-	/** 鍏ㄩ儴涓嶄负绌烘椂杩斿洖鐪�,瀹冪殑闈炴槸鏈夎嚦灏戞湁涓�涓负绌� **/
+	/** 全部不为空时返回�?,它的非是有至少有�?个为�? **/
 	public static boolean nonNull(Object... objs) {
 		if (null == objs)
 			return false;

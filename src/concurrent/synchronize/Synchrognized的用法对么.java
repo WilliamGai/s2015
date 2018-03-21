@@ -1,4 +1,4 @@
-package mian;
+package concurrent.synchronize;
 
 /**
  * Created by bao on 2017/9/1.

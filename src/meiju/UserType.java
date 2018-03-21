@@ -50,19 +50,19 @@ public enum UserType {
 		String desc = null;
         switch (this) {
         case STUDENT: 
-			desc = "ѧ��"; 
+			desc = "学生"; 
 			break;
 		case TEACHER: 
-			desc = "��ʦ"; 
+			desc = "老师"; 
 			break; 
 		case PARENT:   
-			desc = "�ҳ�";   
+			desc = "家长";   
 			break; 
 		case SCHOOL_ADMIN:   
-			desc = "ѧУ����Ա";  
+			desc = "学校管理员";  
 			break;        
 		default:    
-			desc = "δ֪�û�"; 
+			desc = "未知用户"; 
 			break; 
 		}
         return desc;
