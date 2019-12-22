@@ -1,7 +1,10 @@
 package byteint;
 
 import java.util.Arrays;
-
+/**
+ * 二进制转换
+ *
+ */
 public class IntBitUtil {
 
 	/**
