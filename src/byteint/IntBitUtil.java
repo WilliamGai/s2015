@@ -18,6 +18,7 @@ public class IntBitUtil {
 		int va = bytesToInt(b);
 		System.out.println(Arrays.toString(b));
 		System.out.println(va);
+		System.out.println(Arrays.toString(intToByte(-2)));
 	}
 	/**
 	 * 127 [0, 0, 0, 127]
