@@ -9,3 +9,4 @@
 *.log
 *.class
 *.log.*
+/bin/
